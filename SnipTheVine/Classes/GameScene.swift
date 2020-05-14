@@ -52,6 +52,14 @@ class GameScene: SKScene {
     setUpAudio()
   }
   
+  func pauseAudio() {
+    GameScene.backgroundMusicPlayer.pause()
+  }
+  
+  func resumeAudio() {
+    GameScene.backgroundMusicPlayer.play()
+  }
+  
   //MARK: - Level setup
   
   private func setUpPhysics() {

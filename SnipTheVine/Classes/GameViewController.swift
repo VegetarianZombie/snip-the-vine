@@ -31,8 +31,17 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+  
+  var scene: GameScene!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    // Listen for notifications    // Listen for notifications
+    let notificationCenter = NotificationCenter.default
+    notificationCenter.addObserver(self, selector: #selector(pauseAudio) , name: UIApplication.willResignActiveNotification, object: nil)
+    
+    notificationCenter.addObserver(self, selector: #selector(resumeAudio) , name: UIApplication.willEnterForegroundNotification, object: nil)
     
     // Configure the view.
     let skView = self.view as! SKView
@@ -41,10 +50,19 @@ class GameViewController: UIViewController {
     skView.ignoresSiblingOrder = true
     
     // Create and configure the scene.
-    let scene = GameScene(size: CGSize(width: 375, height: 667))
+    scene = GameScene(size: CGSize(width: 375, height: 667))
     scene.scaleMode = .aspectFill
     
     // Present the scene.
     skView.presentScene(scene)
   }
+  
+  @objc func resumeAudio() {
+    scene.resumeAudio()
+  }
+  
+  @objc func pauseAudio() {
+    scene.pauseAudio()
+  }
+  
 }
