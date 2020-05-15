@@ -42,8 +42,11 @@ class GameScene: SKScene {
   
   private var isLevelOver = false
   private var didCutVine = false
+  private var currentLevel = 0
+  private var levels: [LevelData] = []
   
   override func didMove(to view: SKView) {
+    loadData()
     setUpPhysics()
     setUpScenery()
     setUpPrize()
@@ -85,8 +88,9 @@ class GameScene: SKScene {
   }
   
   private func setUpPrize() {
+    let pineappleLocation = levels[currentLevel].pineappleLocation
     prize = SKSpriteNode(imageNamed: ImageName.prize)
-    prize.position = CGPoint(x: size.width * 0.5, y: size.height * 0.7)
+    prize.position = CGPoint(x: size.width * pineappleLocation.x, y: size.height * pineappleLocation.y)
     prize.zPosition = Layer.prize
     prize.physicsBody = SKPhysicsBody(circleOfRadius: prize.size.height / 2)
     prize.physicsBody?.categoryBitMask = PhysicsCategory.prize
@@ -96,22 +100,27 @@ class GameScene: SKScene {
     addChild(prize)
   }
   
+  private func loadData() {
+    let decoder = PropertyListDecoder()
+    
+    guard
+      let dataFile = Bundle.main.url(
+        forResource: GameConfiguration.gameDataFile,
+        withExtension: nil),
+      let data = try? Data(contentsOf: dataFile),
+      let levelData = try? decoder.decode([LevelData].self, from: data)
+    else {
+      return
+    }
+    levels = levelData
+  }
+  
   //MARK: - Vine methods
   
   private func setUpVines() {
     // load vine data
-    let decoder = PropertyListDecoder()
-    guard
-      let dataFile = Bundle.main.url(
-        forResource: GameConfiguration.vineDataFile,
-        withExtension: nil),
-      let data = try? Data(contentsOf: dataFile),
-      let vines = try? decoder.decode([VineData].self, from: data)
-    else {
-      return
-    }
 
-    for (i, vineData) in vines.enumerated() {
+    for (i, vineData) in levels[currentLevel].vines.enumerated() {
       let anchorPoint = CGPoint(
         x: vineData.relAnchorPoint.x * size.width,
         y: vineData.relAnchorPoint.y * size.height)
