@@ -139,9 +139,10 @@ class GameScene: SKScene {
     crocodile = SKSpriteNode(imageNamed: ImageName.crocMouthClosed)
     crocodile.position = CGPoint(x: size.width * 0.75, y: size.height * 0.312)
     crocodile.zPosition = Layer.crocodile
+    let maskSize = CGSize(width: crocodile.size.width / 2, height: crocodile.size.height / 2)
     crocodile.physicsBody = SKPhysicsBody(
       texture: SKTexture(imageNamed: ImageName.crocMask),
-      size: crocodile.size)
+      size: maskSize)
     crocodile.physicsBody?.categoryBitMask = PhysicsCategory.crocodile
     crocodile.physicsBody?.collisionBitMask = 0
     crocodile.physicsBody?.contactTestBitMask = PhysicsCategory.prize
