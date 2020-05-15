@@ -113,6 +113,7 @@ class GameScene: SKScene {
       return
     }
     levels = levelData
+    currentLevel = (0..<levels.count).randomElement() ?? 0
   }
   
   //MARK: - Vine methods
