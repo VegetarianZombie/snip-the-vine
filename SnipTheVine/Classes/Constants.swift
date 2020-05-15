@@ -39,6 +39,7 @@ enum ImageName {
   static let crocMask = "CrocMask"
   static let prize = "Pineapple"
   static let prizeMask = "PineappleMask"
+  static let backArrow = "BackArrow"
 }
 
 enum SoundFile {
@@ -54,6 +55,7 @@ enum Layer {
   static let vine: CGFloat = 1
   static let prize: CGFloat = 2
   static let foreground: CGFloat = 3
+  static let ui: CGFloat = 4
 }
 
 enum PhysicsCategory {

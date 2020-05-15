@@ -52,6 +52,7 @@ class GameScene: SKScene {
     setUpPrize()
     setUpVines()
     setUpCrocodile()
+    setUpBackArrow()
     setUpAudio()
   }
   
@@ -85,6 +86,17 @@ class GameScene: SKScene {
     water.zPosition = Layer.foreground
     water.size = CGSize(width: size.width, height: size.height * 0.2139)
     addChild(water)
+  }
+  
+  private func setUpBackArrow() {
+    let arrow = SKSpriteNode(imageNamed: ImageName.backArrow)
+    
+    
+    let arrowX = size.width * 0.16
+    let arrowY = size.height * 0.06
+    arrow.position = CGPoint(x: arrowX, y: arrowY)
+    arrow.zPosition = Layer.ui
+    addChild(arrow)
   }
   
   private func setUpPrize() {
@@ -247,6 +259,7 @@ class GameScene: SKScene {
     let delay = SKAction.wait(forDuration: 1)
     let sceneChange = SKAction.run {
       let scene = GameScene(size: self.size)
+      scene.scaleMode = .aspectFill
       self.view?.presentScene(scene, transition: transition)
     }
 
