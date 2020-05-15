@@ -11,7 +11,6 @@
 		AFEF960E231A01B4006025E5 /* Particle.sks in Resources */ = {isa = PBXBuildFile; fileRef = AFEF960D231A01B4006025E5 /* Particle.sks */; };
 		AFEF9610231A01C2006025E5 /* Particle.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF960F231A01C2006025E5 /* Particle.png */; };
 		AFEF9612231A01CD006025E5 /* Particle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFEF9611231A01CD006025E5 /* Particle@2x.png */; };
-		AFEF9618231A0225006025E5 /* VineData.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFEF9617231A0225006025E5 /* VineData.plist */; };
 		AFEF961C231A026E006025E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF961B231A026E006025E5 /* Constants.swift */; };
 		AFEF961E231A028E006025E5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF961D231A028E006025E5 /* GameViewController.swift */; };
 		AFEF9620231A043E006025E5 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF961F231A043E006025E5 /* GameScene.swift */; };
@@ -23,6 +22,8 @@
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
+		D31BD1B1246EEF7B0009DD14 /* LevelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31BD1B0246EEF7B0009DD14 /* LevelData.plist */; };
+		D31BD1B3246EF1C70009DD14 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31BD1B2246EF1C70009DD14 /* LevelData.swift */; };
 		F5EA92432334BD450027F71C /* VineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA92422334BD450027F71C /* VineData.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +36,6 @@
 		AFEF9614231A0200006025E5 /* NomNom.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NomNom.caf; sourceTree = "<group>"; };
 		AFEF9615231A020A006025E5 /* Slice.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Slice.caf; sourceTree = "<group>"; };
 		AFEF9616231A0215006025E5 /* Splash.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splash.caf; sourceTree = "<group>"; };
-		AFEF9617231A0225006025E5 /* VineData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = VineData.plist; sourceTree = "<group>"; };
 		AFEF961B231A026E006025E5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AFEF961D231A028E006025E5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AFEF961F231A043E006025E5 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -45,6 +45,8 @@
 		D2A5F20A1F4A9144005CD714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2A5F20F1F4A9144005CD714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D31BD1B0246EEF7B0009DD14 /* LevelData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LevelData.plist; sourceTree = "<group>"; };
+		D31BD1B2246EF1C70009DD14 /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
 		F5EA92422334BD450027F71C /* VineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VineData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +84,7 @@
 		AFEF960B231A0187006025E5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				AFEF9617231A0225006025E5 /* VineData.plist */,
+				D31BD1B0246EEF7B0009DD14 /* LevelData.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -116,6 +118,7 @@
 				AFEF961F231A043E006025E5 /* GameScene.swift */,
 				AFEF9621231A04BB006025E5 /* VineNode.swift */,
 				F5EA92422334BD450027F71C /* VineData.swift */,
+				D31BD1B2246EF1C70009DD14 /* LevelData.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -212,10 +215,10 @@
 				AFEF962A231A1E8E006025E5 /* CheeZeeJungle.caf in Resources */,
 				AFEF9629231A1E8C006025E5 /* NomNom.caf in Resources */,
 				AFEF9628231A1E89006025E5 /* Slice.caf in Resources */,
+				D31BD1B1246EEF7B0009DD14 /* LevelData.plist in Resources */,
 				AFEF9627231A1E86006025E5 /* Splash.caf in Resources */,
 				5394F02521864DF5006E754C /* LaunchScreen.storyboard in Resources */,
 				D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */,
-				AFEF9618231A0225006025E5 /* VineData.plist in Resources */,
 				AFEF9612231A01CD006025E5 /* Particle@2x.png in Resources */,
 				D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */,
 				AFEF960E231A01B4006025E5 /* Particle.sks in Resources */,
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
+				D31BD1B3246EF1C70009DD14 /* LevelData.swift in Sources */,
 				F5EA92432334BD450027F71C /* VineData.swift in Sources */,
 				AFEF961E231A028E006025E5 /* GameViewController.swift in Sources */,
 				AFEF9620231A043E006025E5 /* GameScene.swift in Sources */,
