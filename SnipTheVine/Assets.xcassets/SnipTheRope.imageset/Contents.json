@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "snip-the-rope.png",
+      "filename" : "snip-the-vine.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "snip-the-rope@2.png",
+      "filename" : "snip-the-vine@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "snip-the-rope@3.png",
+      "filename" : "snip-the-vine@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
