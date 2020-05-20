@@ -22,8 +22,10 @@
 		D2A5F2091F4A9144005CD714 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F2071F4A9144005CD714 /* Main.storyboard */; };
 		D2A5F20B1F4A9144005CD714 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A5F20A1F4A9144005CD714 /* Assets.xcassets */; };
 		D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */; };
+		D31395F024746BA700B4AF85 /* IntroductionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31395EF24746BA700B4AF85 /* IntroductionScene.swift */; };
 		D31BD1B1246EEF7B0009DD14 /* LevelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D31BD1B0246EEF7B0009DD14 /* LevelData.plist */; };
 		D31BD1B3246EF1C70009DD14 /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31BD1B2246EF1C70009DD14 /* LevelData.swift */; };
+		D394F8FA247585C900AA4D19 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D394F8F9247585C900AA4D19 /* SKTAudio.swift */; };
 		F5EA92432334BD450027F71C /* VineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA92422334BD450027F71C /* VineData.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,8 +47,10 @@
 		D2A5F20A1F4A9144005CD714 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2A5F20F1F4A9144005CD714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2A5F2201F4A96D0005CD714 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D31395EF24746BA700B4AF85 /* IntroductionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionScene.swift; sourceTree = "<group>"; };
 		D31BD1B0246EEF7B0009DD14 /* LevelData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LevelData.plist; sourceTree = "<group>"; };
 		D31BD1B2246EF1C70009DD14 /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		D394F8F9247585C900AA4D19 /* SKTAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		F5EA92422334BD450027F71C /* VineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VineData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,9 +120,11 @@
 				AFEF961B231A026E006025E5 /* Constants.swift */,
 				AFEF961D231A028E006025E5 /* GameViewController.swift */,
 				AFEF961F231A043E006025E5 /* GameScene.swift */,
+				D31395EF24746BA700B4AF85 /* IntroductionScene.swift */,
 				AFEF9621231A04BB006025E5 /* VineNode.swift */,
 				F5EA92422334BD450027F71C /* VineData.swift */,
 				D31BD1B2246EF1C70009DD14 /* LevelData.swift */,
+				D394F8F9247585C900AA4D19 /* SKTAudio.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -235,6 +241,8 @@
 			files = (
 				D2A5F2211F4A96D0005CD714 /* AppDelegate.swift in Sources */,
 				D31BD1B3246EF1C70009DD14 /* LevelData.swift in Sources */,
+				D31395F024746BA700B4AF85 /* IntroductionScene.swift in Sources */,
+				D394F8FA247585C900AA4D19 /* SKTAudio.swift in Sources */,
 				F5EA92432334BD450027F71C /* VineData.swift in Sources */,
 				AFEF961E231A028E006025E5 /* GameViewController.swift in Sources */,
 				AFEF9620231A043E006025E5 /* GameScene.swift in Sources */,

@@ -54,9 +54,17 @@ class GameViewController: UIViewController {
     scene = IntroductionScene(size: CGSize(width: 375, height: 667))
     scene.scaleMode = .aspectFill
     
+    // Play Background Music
+    setupAudio()
+    
     // Present the scene.
     skView.presentScene(scene)
     
+  }
+  
+  func setupAudio() {
+    let audioPlayer = SKTAudio.sharedInstance()
+    audioPlayer.playBackgroundMusic(SoundFile.backgroundMusic)
   }
   
   @objc func launchTutorial() {
@@ -71,11 +79,11 @@ class GameViewController: UIViewController {
   }
   
   @objc func resumeAudio() {
-    //scene.resumeAudio()
+    SKTAudio.sharedInstance().resumeBackgroundMusic()
   }
   
   @objc func pauseAudio() {
-    //scene.pauseAudio()
+    SKTAudio.sharedInstance().pauseBackgroundMusic()
   }
   
 }

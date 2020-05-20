@@ -34,12 +34,6 @@ class GameScene: SKScene {
   private var crocodile: SKSpriteNode!
   private var prize: SKSpriteNode!
   
-  private static var backgroundMusicPlayer: AVAudioPlayer!
-  
-  private var sliceSoundAction: SKAction!
-  private var splashSoundAction: SKAction!
-  private var nomNomSoundAction: SKAction!
-  
   private var isLevelOver = false
   private var didCutVine = false
   private var currentLevel = 0
@@ -56,13 +50,6 @@ class GameScene: SKScene {
     setUpAudio()
   }
   
-  func pauseAudio() {
-    GameScene.backgroundMusicPlayer.pause()
-  }
-  
-  func resumeAudio() {
-    GameScene.backgroundMusicPlayer.play()
-  }
   
   //MARK: - Level setup
   
@@ -269,7 +256,7 @@ class GameScene: SKScene {
       crocodile.removeAllActions()
       crocodile.texture = SKTexture(imageNamed: ImageName.crocMouthOpen)
       animateCrocodile()
-      run(sliceSoundAction)
+      SKTAudio.sharedInstance().playSoundEffect(SoundFile.slice)
       didCutVine = true
     }
   }
@@ -288,34 +275,8 @@ class GameScene: SKScene {
   //MARK: - Audio
   
   private func setUpAudio() {
-    if GameScene.backgroundMusicPlayer == nil {
-      let backgroundMusicURL = Bundle.main.url(
-        forResource: SoundFile.backgroundMusic,
-        withExtension: nil)
-      
-      do {
-        let theme = try AVAudioPlayer(contentsOf: backgroundMusicURL!)
-        GameScene.backgroundMusicPlayer = theme
-      } catch {
-        // couldn't load file :[
-      }
-      
-      GameScene.backgroundMusicPlayer.numberOfLoops = -1
-    }
     
-    if !GameScene.backgroundMusicPlayer.isPlaying {
-      GameScene.backgroundMusicPlayer.play()
-    }
-    
-    sliceSoundAction = .playSoundFileNamed(
-      SoundFile.slice,
-      waitForCompletion: false)
-    splashSoundAction = .playSoundFileNamed(
-      SoundFile.splash,
-      waitForCompletion: false)
-    nomNomSoundAction = .playSoundFileNamed(
-      SoundFile.nomNom,
-      waitForCompletion: false)
+
   }
 }
 
@@ -327,7 +288,7 @@ extension GameScene: SKPhysicsContactDelegate {
     
     if prize.position.y <= 0 {
       isLevelOver = true
-      run(splashSoundAction)
+      SKTAudio.sharedInstance().playSoundEffect(SoundFile.splash)
       switchToNewGame(withTransition: .fade(withDuration: 1.0))
     }
   }
@@ -347,7 +308,7 @@ extension GameScene: SKPhysicsContactDelegate {
       let removeNode = SKAction.removeFromParent()
       let sequence = SKAction.sequence([shrink, removeNode])
       prize.run(sequence)
-      run(nomNomSoundAction)
+      SKTAudio.sharedInstance().playSoundEffect(SoundFile.nomNom)
       runNomNomAnimation(withDelay: 0.15)
       // transition to next level
       switchToNewGame(withTransition: .doorway(withDuration: 1.0))
