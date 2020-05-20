@@ -41,7 +41,7 @@ class GameViewController: UIViewController {
     // Listen for notifications    // Listen for notifications
     let notificationCenter = NotificationCenter.default
     notificationCenter.addObserver(self, selector: #selector(pauseAudio) , name: UIApplication.willResignActiveNotification, object: nil)
-    notificationCenter.addObserver(self, selector: #selector(resumeAudio) , name: UIApplication.willEnterForegroundNotification, object: nil)
+    notificationCenter.addObserver(self, selector: #selector(resumeAudio) , name: UIApplication.didBecomeActiveNotification, object: nil)
     notificationCenter.addObserver(self, selector: #selector(launchTutorial), name: NSNotification.Name(rawValue: NotificationNames.launchTutorial), object: nil)
     
     // Configure the view.
