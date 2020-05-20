@@ -40,6 +40,20 @@ enum ImageName {
   static let prize = "Pineapple"
   static let prizeMask = "PineappleMask"
   static let backArrow = "BackArrow"
+  static let introBackground = "IntroBackground"
+  static let snipTheRope = "SnipTheRope"
+  static let playTheGame = "PlayTheGame"
+  static let makeTheGame = "MakeTheGame"
+}
+
+enum ButtonName {
+  static let start = "Start"
+  static let tutorial = "Tutorial"
+  static let back = "Back"
+}
+
+enum NotificationNames {
+  static let launchTutorial = "LaunchTutorial"
 }
 
 enum SoundFile {

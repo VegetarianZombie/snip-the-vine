@@ -29,10 +29,11 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import WebKit
 
 class GameViewController: UIViewController {
   
-  var scene: GameScene!
+  var scene: IntroductionScene!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,8 +41,8 @@ class GameViewController: UIViewController {
     // Listen for notifications    // Listen for notifications
     let notificationCenter = NotificationCenter.default
     notificationCenter.addObserver(self, selector: #selector(pauseAudio) , name: UIApplication.willResignActiveNotification, object: nil)
-    
     notificationCenter.addObserver(self, selector: #selector(resumeAudio) , name: UIApplication.willEnterForegroundNotification, object: nil)
+    notificationCenter.addObserver(self, selector: #selector(launchTutorial), name: NSNotification.Name(rawValue: NotificationNames.launchTutorial), object: nil)
     
     // Configure the view.
     let skView = self.view as! SKView
@@ -50,19 +51,31 @@ class GameViewController: UIViewController {
     skView.ignoresSiblingOrder = true
     
     // Create and configure the scene.
-    scene = GameScene(size: CGSize(width: 375, height: 667))
+    scene = IntroductionScene(size: CGSize(width: 375, height: 667))
     scene.scaleMode = .aspectFill
     
     // Present the scene.
     skView.presentScene(scene)
+    
+  }
+  
+  @objc func launchTutorial() {
+    let wkWebView = WKWebView()
+    guard let url = URL(string: "https://www.raywenderlich.com/5347797-how-to-make-a-game-like-cut-the-rope-with-spritekit") else {
+      fatalError("Unable to construct url")
+    }
+    wkWebView.load(URLRequest(url: url))
+    let viewController = UIViewController()
+    viewController.view = wkWebView
+    present(viewController, animated: true, completion: nil)
   }
   
   @objc func resumeAudio() {
-    scene.resumeAudio()
+    //scene.resumeAudio()
   }
   
   @objc func pauseAudio() {
-    scene.pauseAudio()
+    //scene.pauseAudio()
   }
   
 }

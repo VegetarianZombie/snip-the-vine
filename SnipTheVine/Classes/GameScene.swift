@@ -96,6 +96,7 @@ class GameScene: SKScene {
     let arrowY = size.height * 0.06
     arrow.position = CGPoint(x: arrowX, y: arrowY)
     arrow.zPosition = Layer.ui
+    arrow.name = ButtonName.back
     addChild(arrow)
   }
   
@@ -186,10 +187,28 @@ class GameScene: SKScene {
     crocodile.run(sequence)
   }
   
+  private func returnToIntro() {
+    let sceneChange = SKAction.run {
+      let scene = IntroductionScene(size: self.size)
+      scene.scaleMode = .aspectFill
+      self.view?.presentScene(scene, transition: .fade(withDuration: 2.0))
+    }
+    run(sceneChange)
+  }
+  
   //MARK: - Touch handling
 
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     didCutVine = false
+    guard let touch = touches.first else {
+      return
+    }
+    let positionInScene = touch.location(in:self)
+    let touchedNode = self.atPoint(positionInScene)
+
+    if touchedNode.name == ButtonName.back {
+      returnToIntro()
+    }
   }
   
   override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
